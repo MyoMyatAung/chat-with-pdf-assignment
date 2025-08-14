@@ -121,9 +121,8 @@ The system uses a LangGraph-based multi-agent architecture with the following no
 ## How to Improve in the Future
 1. **Scalable Vector Store**: Replace in-memory FAISS with a persistent vector database like Pinecone or Weaviate for handling larger corpora.
 2. **Interactive Clarification**: Implement a conversational loop for ambiguous queries, prompting users for clarification via the API.
-3. **Evaluation System**: Add a script with golden Q&A pairs (e.g., from assignment examples) and compute metrics like BLEU or semantic similarity.
-4. **Hybrid Search**: Combine keyword-based search (e.g., BM25) with vector search for better retrieval.
-5. **Persistent Memory**: Use a database (e.g., Redis) for session memory to support multiple users and persistence.
+3. **Evaluation System**: Add a script with golden Q&A pairs and compute metrics like BLEU or semantic similarity.
+4. **Persistent Memory**: Use a database (e.g., Redis) for session memory to support multiple users and persistence.
 
 ## Docker and docker-compose.yml Files
 
