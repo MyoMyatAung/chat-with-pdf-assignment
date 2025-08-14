@@ -61,15 +61,16 @@ The system uses a LangGraph-based multi-agent architecture with the following no
    ```
 3. **Add PDFs**:
    Copy provided PDF papers to the `papers/` folder. Ensure at least one PDF exists.
-4. **Ingest PDF**:
+4. **Install Dependencies & Ingest PDF**:
     ```bash
+   pip install -r requirements.txt
    python ingest.py
    ```
 5. **Build and Run with Docker Compose**:
    ```bash
    docker-compose up --build
    ```
-   - This builds the Docker image, runs `ingest.py` to process PDFs, and starts the FastAPI server on `http://localhost:8000`.
+   - This builds the Docker image starts the FastAPI server on `http://localhost:8000`.
    - The FAISS index is created in `faiss_index/` on first run.
 6. **Test the API**:
    - Ask a PDF-based question:
