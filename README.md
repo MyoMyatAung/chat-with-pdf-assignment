@@ -50,7 +50,7 @@ The system uses a LangGraph-based multi-agent architecture with the following no
 ### Setup
 1. **Clone the Repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone git@github.com:MyoMyatAung/chat-with-pdf-assignment.git
    cd generative-ai-assignment
    ```
 2. **Create `.env` File**:
@@ -61,13 +61,17 @@ The system uses a LangGraph-based multi-agent architecture with the following no
    ```
 3. **Add PDFs**:
    Copy provided PDF papers to the `papers/` folder. Ensure at least one PDF exists.
-4. **Build and Run with Docker Compose**:
+4. **Ingest PDF**:
+    ```bash
+   python ingest.py
+   ```
+5. **Build and Run with Docker Compose**:
    ```bash
    docker-compose up --build
    ```
    - This builds the Docker image, runs `ingest.py` to process PDFs, and starts the FastAPI server on `http://localhost:8000`.
    - The FAISS index is created in `faiss_index/` on first run.
-5. **Test the API**:
+6. **Test the API**:
    - Ask a PDF-based question:
      ```bash
      curl -X POST http://localhost:8000/ask -H "Content-Type: application/json" -d '{"question":"Which prompt template gave the highest zero-shot accuracy on Spider in Zhang et al. (2024)?","session_id":"user1"}'
@@ -81,7 +85,7 @@ The system uses a LangGraph-based multi-agent architecture with the following no
      ```bash
      curl -X POST http://localhost:8000/clear_memory -H "Content-Type: application/json" -d '"user1"'
      ```
-6. **Stop the Server**:
+7. **Stop the Server**:
    ```bash
    docker-compose down
    ```
